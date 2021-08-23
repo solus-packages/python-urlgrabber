@@ -1,0 +1,20 @@
+name       : python-urlgrabber
+version    : 3.10.2
+release    : 6
+source     :
+    - https://files.pythonhosted.org/packages/source/u/urlgrabber/urlgrabber-3.10.2.tar.gz : 05b7164403d49b37fe00f7ac8401e56b00d0568ac45ee15d5f0610ac293c3070
+homepage   : http://urlgrabber.baseurl.org/
+license    : LGPL-2.1-or-later
+component  : system.base
+summary    : A high-level cross-protocol url-grabber
+description: |
+    urlgrabber is a pure python package that drastically simplifies the fetching of files. It is designed to be used in programs that need common (but not necessarily simple) url-fetching features. It is extremely simple to drop into an existing program and provides a clean interface to protocol-independant file-access. Best of all, urlgrabber takes care of all those pesky file-fetching details, and lets you focus on whatever it is that your program is written to do!
+builddeps  :
+    - python-setuptools
+rundeps    :
+    - python
+build      : |
+    %python_setup
+install    : |
+    %python_install
+    rm -rv $installdir/usr/share
